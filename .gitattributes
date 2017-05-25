@@ -18,3 +18,4 @@ output/lof_enrichment_analysis/gene_disease_assoc_power.pdf filter=lfs diff=lfs 
 output/lof_enrichment_analysis/ASJ_ss.tsv filter=lfs diff=lfs merge=lfs -text
 output/lof_enrichment_analysis/FIN_ss.tsv filter=lfs diff=lfs merge=lfs -text
 output/lof_enrichment_analysis/gsp_diseases.xlsx filter=lfs diff=lfs merge=lfs -text
+output/amr_allele_list/amr_alleles.tsv filter=lfs diff=lfs merge=lfs -text
