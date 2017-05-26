@@ -30,3 +30,4 @@ output/amr_allele_list/piemm_lof_0.01_0.25_0.25.pickle filter=lfs diff=lfs merge
 output/amr_allele_list/piemm_missense_0.01_0.0625_0.0625.pickle filter=lfs diff=lfs merge=lfs -text
 output/amr_allele_list/piemm_missense_0.01_0.25_0.25.pickle filter=lfs diff=lfs merge=lfs -text
 output/amr_allele_list/piemm_missense_0.25_0.25_0.25.pickle filter=lfs diff=lfs merge=lfs -text
+*.pickle filter=lfs diff=lfs merge=lfs -text
