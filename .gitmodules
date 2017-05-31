@@ -1,0 +1,3 @@
+[submodule "submodules/gene_lists"]
+	path = submodules/gene_lists
+	url = https://github.com/macarthur-lab/gene_lists
