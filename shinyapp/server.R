@@ -14,13 +14,19 @@ shinyServer(function(input, output, session) {
   alpha <- renderPrint(input$alpha)
   unselected <- renderPrint({ input$unselected })
   
-  ratio = nControl / nCase
+  ratio <- nControl / nCase
   
-  power = sapply(d, function(x) GPC.default(pA=x, pD=pD, RRAa=RRAa, 
-                                            RRAA=RRAa * 2, Dprime=1, 
-                                            pB=pA, nCase=nCase, ratio=ratio, 
-                                            alpha=alpha, unselected=unselected, 
-                                            quiet=TRUE)$power)
+  power <- sapply(d, function(x) GPC.default(pA=x, pD=pD, RRAa=RRAa, 
+                                             RRAA=RRAa * 2, Dprime=1, 
+                                             pB=pA, nCase=nCase, ratio=ratio, 
+                                             alpha=alpha, unselected=unselected, 
+                                             quiet=TRUE)$power)
+
+  power = data.frame()  # WORKING HERE: Make data frame from results so I can pass it to ggplot2 
+  # https://stackoverflow.com/questions/9231702/ggplot2-adding-two-errorbars-to-each-point-in-scatterplot
+  power.mean <- power[seq(1, length(power), 3)]
+  power.lower <- power[seq(2, length(power), 3)]
+  power.upper <- power[seq(3, length(power), 3)]
   
   # Combine the selected variables into a new data frame
   selectedData <- reactive({
